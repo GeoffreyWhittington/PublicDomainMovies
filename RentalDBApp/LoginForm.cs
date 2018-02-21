@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RentalDBApp
@@ -26,25 +19,42 @@ namespace RentalDBApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
             string pword = passwordTextBox.Text;
             string email = emailTextBox.Text;
             bool loginMatch = DAL.MemberDAL.searchLoginMatch(pword, email);
-            if (loginMatch == true)
+            if (emailTextBox.Text == "")
+                {
+                 MessageBox.Show("EMAIL REQUIRED");
+                 emailTextBox.Focus();  
+                }
+                else if (passwordTextBox.Text == "")
+            {
+                MessageBox.Show("PASSWORD REQUIRED");
+                passwordTextBox.Focus();
+            }
+            else if (loginMatch == true)
             {
                 MessageBox.Show("MEMBER LOGGED IN");
                 Visible = false;
                 var movieAccesForm = new MovieAccessForm();
                 movieAccesForm.ShowDialog();
-                
             }
             else
             {
-                
                 MessageBox.Show("TRY AGAIN");
                 emailTextBox.Clear();
                 passwordTextBox.Clear();
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var newMainMenuForm = new MainMenuForm();
+            newMainMenuForm.Show();
+        }
     }
 }
+            
+                
+                

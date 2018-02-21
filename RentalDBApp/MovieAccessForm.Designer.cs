@@ -36,6 +36,7 @@
             this.mOVIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.teamaDataSet1 = new RentalDBApp.teamaDataSet1();
             this.mOVIETableAdapter = new RentalDBApp.teamaDataSet1TableAdapters.MOVIETableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.movieAccessFormDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamaDataSet1)).BeginInit();
@@ -51,10 +52,10 @@
             this.descriptionDataGridViewTextBoxColumn,
             this.movieyearmadeDataGridViewTextBoxColumn});
             this.movieAccessFormDataGridView.DataSource = this.mOVIEBindingSource;
-            this.movieAccessFormDataGridView.Location = new System.Drawing.Point(96, 59);
+            this.movieAccessFormDataGridView.Location = new System.Drawing.Point(101, 26);
             this.movieAccessFormDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.movieAccessFormDataGridView.Name = "movieAccessFormDataGridView";
-            this.movieAccessFormDataGridView.Size = new System.Drawing.Size(597, 410);
+            this.movieAccessFormDataGridView.Size = new System.Drawing.Size(597, 251);
             this.movieAccessFormDataGridView.TabIndex = 4;
             this.movieAccessFormDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.movieAccessFormDataGridView_CellContentClick);
             // 
@@ -90,12 +91,23 @@
             // 
             this.mOVIETableAdapter.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(299, 343);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(164, 126);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Log Out";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MovieAccessForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 542);
+            this.ClientSize = new System.Drawing.Size(802, 508);
             this.ControlBox = false;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.movieAccessFormDataGridView);
             this.Name = "MovieAccessForm";
             this.Text = "MovieAccessForm";
@@ -116,5 +128,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn movieratingDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn movieyearmadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button1;
     }
 }

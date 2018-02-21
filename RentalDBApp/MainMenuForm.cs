@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RentalDBApp.DAL;
 
@@ -26,10 +19,9 @@ namespace RentalDBApp
             mainMenuDataGridView.DataSource = movieTitles;
             mainMenuDataGridView.ClearSelection();
 
-            //DAL TO PULL LIST OF MOVIE TITLES
-            //GET WHAT I WANT
-
         }
+
+           
 
         private void signUpButton_Click(object sender, EventArgs e)
         {
@@ -37,8 +29,6 @@ namespace RentalDBApp
             this.Hide();
             var signUpForm = new signUpForm();
             signUpForm.Show();
-
-            
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -46,12 +36,21 @@ namespace RentalDBApp
             this.Hide();
             var loginForm = new LoginForm();
             loginForm.Show();
-
         }
 
         private void mainMenuDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
+           
+
+
+
+            

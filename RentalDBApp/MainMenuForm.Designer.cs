@@ -40,6 +40,7 @@
             this.teamaDataSet1 = new RentalDBApp.teamaDataSet1();
             this.mOVIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mOVIETableAdapter = new RentalDBApp.teamaDataSet1TableAdapters.MOVIETableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mainMenuDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mOVIEBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamaDataSet1)).BeginInit();
@@ -135,12 +136,23 @@
             // 
             this.mOVIETableAdapter.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(498, 341);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "close";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1091, 364);
+            this.ClientSize = new System.Drawing.Size(1091, 405);
             this.ControlBox = false;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.mainMenuDataGridView);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.signUpButton);
@@ -170,6 +182,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn movieyearmadeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn movieratingDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource mOVIEBindingSource1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -1,18 +1,13 @@
 ﻿using RentalDBApp.DAL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Media;
 using System.Windows.Forms;
 
 namespace RentalDBApp
 {
     public partial class MovieAccessForm : Form
     {
+        SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.INTRO_MUSIC);
         public MovieAccessForm()
         {
             InitializeComponent();
@@ -31,17 +26,13 @@ namespace RentalDBApp
             movieAccessFormDataGridView.ClearSelection();
         }
             
-
-
-
-
-
         private void movieAccessFormDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int position = e.RowIndex;
             MOVIE value = (MOVIE)movieAccessFormDataGridView.Rows[position].DataBoundItem;
             try
             {
+                simpleSound.Play();
                 System.Diagnostics.Process.Start(value.movie_title_link);
             }
             catch
@@ -49,8 +40,19 @@ namespace RentalDBApp
 
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var newMainMenuForm = new MainMenuForm();
+            newMainMenuForm.Show();
+           
         }
+    }
 }
+
+            
+            
 
            
 //2. I will use only what I have, columns, rows, e object in the click function, to achieve this.

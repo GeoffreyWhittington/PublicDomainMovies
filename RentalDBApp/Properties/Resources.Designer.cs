@@ -99,5 +99,14 @@ namespace RentalDBApp.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream INTRO_MUSIC {
+            get {
+                return ResourceManager.GetStream("INTRO_MUSIC", resourceCulture);
+            }
+        }
     }
 }
