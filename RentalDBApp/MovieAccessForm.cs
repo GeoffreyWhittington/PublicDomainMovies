@@ -15,8 +15,6 @@ namespace RentalDBApp
 
         private void MovieAccessForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'teamaDataSet1.MOVIE' table. You can move, or remove it, as needed.
-            //this.mOVIETableAdapter.Fill(this.teamaDataSet1.MOVIE);
             DataGridViewLinkColumn col = new DataGridViewLinkColumn();
             col.DataPropertyName = "movie_title";
             col.Name = "movie_title_link";
@@ -33,6 +31,7 @@ namespace RentalDBApp
             try
             {
                 simpleSound.Play();
+                System.Threading.Thread.Sleep(5000);
                 System.Diagnostics.Process.Start(value.movie_title_link);
             }
             catch
