@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using RentalDBApp.DAL;
-
+using System.Collections.Generic;
 
 namespace RentalDBApp
 {
@@ -14,10 +14,19 @@ namespace RentalDBApp
 
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
-            
-            var movieTitles = MovieDAL.getmovieS();
-            mainMenuDataGridView.DataSource = movieTitles;
-            mainMenuDataGridView.ClearSelection();
+             try
+            {
+                List<MOVIE> movieTitles = MovieDAL.getmovieS();
+                mainMenuDataGridView.DataSource = movieTitles;
+                mainMenuDataGridView.ClearSelection();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Movie load failed.");
+                //this.Close();
+                //Application.Run(new MainMenuForm());
+            }
 
         }
 

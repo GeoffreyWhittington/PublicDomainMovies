@@ -4,12 +4,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RentalDBApp.DAL
 {
-     class MovieDAL
+    class MovieDAL
     { 
         private static string _connectionString = "Data Source=198.209.220.125;Initial Catalog=teama;User ID=teama;Password=teama";
         public static List<Movie> getmovie()
