@@ -5,13 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="1b07be4bc27343e49ff826d038511467" Name="Diagram1">
-        <EntityTypeShape EntityType="MovieDB.CONTACT_METHOD" Width="1.5" PointX="5.75" PointY="0.75" />
         <EntityTypeShape EntityType="MovieDB.GENRE" Width="1.5" PointX="0.75" PointY="1.875" />
-        <EntityTypeShape EntityType="MovieDB.MEMBER" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="MovieDB.MEMBER" Width="1.5" PointX="6" PointY="1.375" />
         <EntityTypeShape EntityType="MovieDB.MOVIE" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="MovieDB.RENTAL" Width="1.5" PointX="2.75" PointY="5.75" />
-        <EntityTypeShape EntityType="MovieDB.SUBSCRIPTION" Width="1.5" PointX="5.75" PointY="3.75" />
-        <EntityTypeShape EntityType="MovieDB.VENDOR" Width="1.5" PointX="4.75" PointY="6.75" />
         <AssociationConnector Association="MovieDB.FK_MOVIE_GENRE" />
       </Diagram>
     </edmx:Diagrams>

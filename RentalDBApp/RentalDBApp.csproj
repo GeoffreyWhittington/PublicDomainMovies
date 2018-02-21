@@ -57,9 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CONTACT_METHOD.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\ContactMethodDAL.cs" />
     <Compile Include="DAL\GenreDAL.cs" />
     <Compile Include="DAL\MemberDAL.cs" />
@@ -116,9 +113,6 @@
     <Compile Include="MovieAccessForm.Designer.cs">
       <DependentUpon>MovieAccessForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RENTAL.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="RentalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,9 +127,6 @@
     <Compile Include="SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SUBSCRIPTION.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="teamaDataSet1.cs">
       <DependentUpon>teamaDataSet1.xsd</DependentUpon>
     </Compile>
@@ -143,9 +134,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>teamaDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="VENDOR.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="VendorForm.cs">
       <SubType>Form</SubType>

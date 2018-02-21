@@ -89,6 +89,7 @@
             this.mainMenuDataGridView.Location = new System.Drawing.Point(311, 56);
             this.mainMenuDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.mainMenuDataGridView.Name = "mainMenuDataGridView";
+            this.mainMenuDataGridView.ReadOnly = true;
             this.mainMenuDataGridView.Size = new System.Drawing.Size(460, 247);
             this.mainMenuDataGridView.TabIndex = 3;
             this.mainMenuDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mainMenuDataGridView_CellContentClick);
@@ -98,24 +99,28 @@
             this.movietitleDataGridViewTextBoxColumn.DataPropertyName = "movie_title";
             this.movietitleDataGridViewTextBoxColumn.HeaderText = "movie_title";
             this.movietitleDataGridViewTextBoxColumn.Name = "movietitleDataGridViewTextBoxColumn";
+            this.movietitleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // movieyearmadeDataGridViewTextBoxColumn
             // 
             this.movieyearmadeDataGridViewTextBoxColumn.DataPropertyName = "movie_year_made";
             this.movieyearmadeDataGridViewTextBoxColumn.HeaderText = "movie_year_made";
             this.movieyearmadeDataGridViewTextBoxColumn.Name = "movieyearmadeDataGridViewTextBoxColumn";
+            this.movieyearmadeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // movieratingDataGridViewTextBoxColumn
             // 
             this.movieratingDataGridViewTextBoxColumn.DataPropertyName = "movie_rating";
             this.movieratingDataGridViewTextBoxColumn.HeaderText = "movie_rating";
             this.movieratingDataGridViewTextBoxColumn.Name = "movieratingDataGridViewTextBoxColumn";
+            this.movieratingDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // mOVIEBindingSource1
             // 

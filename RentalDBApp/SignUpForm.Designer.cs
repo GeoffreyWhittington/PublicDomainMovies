@@ -68,7 +68,7 @@ namespace RentalDBApp
             // 
             this.firstNameTextBox.BackColor = System.Drawing.Color.Silver;
             this.firstNameTextBox.Location = new System.Drawing.Point(25, 150);
-            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(572, 46);
             this.firstNameTextBox.TabIndex = 2;
@@ -89,7 +89,7 @@ namespace RentalDBApp
             // 
             this.lastNameTextBox.BackColor = System.Drawing.Color.Silver;
             this.lastNameTextBox.Location = new System.Drawing.Point(25, 278);
-            this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(572, 46);
             this.lastNameTextBox.TabIndex = 4;
@@ -100,8 +100,8 @@ namespace RentalDBApp
             this.signUpButton.BackColor = System.Drawing.Color.LawnGreen;
             this.signUpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signUpButton.Image = global::RentalDBApp.Properties.Resources.greenlight__1_;
-            this.signUpButton.Location = new System.Drawing.Point(859, 563);
-            this.signUpButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.signUpButton.Location = new System.Drawing.Point(954, 264);
+            this.signUpButton.Margin = new System.Windows.Forms.Padding(4);
             this.signUpButton.Name = "signUpButton";
             this.signUpButton.Size = new System.Drawing.Size(196, 178);
             this.signUpButton.TabIndex = 5;
@@ -168,7 +168,7 @@ namespace RentalDBApp
             this.Controls.Add(this.firstNameTextBox);
             this.Controls.Add(this.firstnameLabel);
             this.Controls.Add(this.signUpLabel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "signUpForm";
             this.Text = "Sign Up";
             this.ResumeLayout(false);

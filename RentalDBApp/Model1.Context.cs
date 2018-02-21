@@ -25,13 +25,8 @@ namespace RentalDBApp
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<CONTACT_METHOD> CONTACT_METHODs { get; set; }
         public virtual DbSet<GENRE> GENREs { get; set; }
         public virtual DbSet<MEMBER> MEMBERs { get; set; }
         public virtual DbSet<MOVIE> MOVIEs { get; set; }
-        public virtual DbSet<RENTAL> RENTALs { get; set; }
-        public virtual DbSet<SUBSCRIPTION> SUBSCRIPTIONs { get; set; }
-        public virtual DbSet<VENDOR> VENDORs { get; set; }
-        
     }
 }

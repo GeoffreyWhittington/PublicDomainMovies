@@ -14,12 +14,14 @@ namespace RentalDBApp
 
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
-             try
+            mainMenuDataGridView.DefaultCellStyle.SelectionBackColor = mainMenuDataGridView.DefaultCellStyle.BackColor;
+            mainMenuDataGridView.DefaultCellStyle.SelectionForeColor = mainMenuDataGridView.DefaultCellStyle.ForeColor;
+            try
             {
                 List<MOVIE> movieTitles = MovieDAL.getmovieS();
                 mainMenuDataGridView.DataSource = movieTitles;
-                mainMenuDataGridView.ClearSelection();
             }
+
 
             catch (Exception ex)
             {

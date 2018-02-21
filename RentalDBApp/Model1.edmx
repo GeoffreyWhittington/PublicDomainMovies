@@ -5,13 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="MovieDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="CONTACT METHOD">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
-        </EntityType>
         <EntityType Name="GENRE">
           <Key>
             <PropertyRef Name="id" />
@@ -41,34 +34,6 @@
           <Property Name="movie_rating" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="movie_title_link" Type="varchar" MaxLength="250" />
         </EntityType>
-        <EntityType Name="RENTAL">
-          <Key>
-            <PropertyRef Name="movie_number" />
-            <PropertyRef Name="member_number" />
-            <PropertyRef Name="media_checkout" />
-          </Key>
-          <Property Name="movie_number" Type="int" Nullable="false" />
-          <Property Name="member_number" Type="int" Nullable="false" />
-          <Property Name="media_checkout" Type="datetime" Nullable="false" />
-          <Property Name="media_return_date" Type="datetime" />
-        </EntityType>
-        <EntityType Name="SUBSCRIPTION">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="cost" Type="money" Nullable="false" />
-        </EntityType>
-        <EntityType Name="VENDOR">
-          <Key>
-            <PropertyRef Name="vendor_name" />
-          </Key>
-          <Property Name="vendor_name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="vendor_rep" Type="char" MaxLength="30" Nullable="false" />
-          <Property Name="vendor_rep_email" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="vendor_rep_phone" Type="varchar" MaxLength="12" Nullable="false" />
-        </EntityType>
         <Association Name="FK_MOVIE_GENRE">
           <End Role="GENRE" Type="Self.GENRE" Multiplicity="1" />
           <End Role="MOVIE" Type="Self.MOVIE" Multiplicity="*" />
@@ -82,13 +47,9 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="MovieDBStoreContainer">
-          <EntitySet Name="CONTACT METHOD" EntityType="Self.CONTACT METHOD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GENRE" EntityType="Self.GENRE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MEMBER" EntityType="Self.MEMBER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MOVIE" EntityType="Self.MOVIE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="RENTAL" EntityType="Self.RENTAL" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SUBSCRIPTION" EntityType="Self.SUBSCRIPTION" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VENDOR" EntityType="Self.VENDOR" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_MOVIE_GENRE" Association="Self.FK_MOVIE_GENRE">
             <End Role="GENRE" EntitySet="GENRE" />
             <End Role="MOVIE" EntitySet="MOVIE" />
@@ -99,25 +60,14 @@
     <edmx:ConceptualModels>
       <Schema Namespace="MovieDB" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="MovieDatabase" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="CONTACT_METHODs" EntityType="MovieDB.CONTACT_METHOD" />
           <EntitySet Name="GENREs" EntityType="MovieDB.GENRE" />
           <EntitySet Name="MEMBERs" EntityType="MovieDB.MEMBER" />
           <EntitySet Name="MOVIEs" EntityType="MovieDB.MOVIE" />
-          <EntitySet Name="RENTALs" EntityType="MovieDB.RENTAL" />
-          <EntitySet Name="SUBSCRIPTIONs" EntityType="MovieDB.SUBSCRIPTION" />
-          <EntitySet Name="VENDORs" EntityType="MovieDB.VENDOR" />
           <AssociationSet Name="FK_MOVIE_GENRE" Association="MovieDB.FK_MOVIE_GENRE">
             <End Role="GENRE" EntitySet="GENREs" />
             <End Role="MOVIE" EntitySet="MOVIEs" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="CONTACT_METHOD">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="GENRE">
           <Key>
             <PropertyRef Name="id" />
@@ -149,34 +99,6 @@
           <NavigationProperty Name="GENRE" Relationship="MovieDB.FK_MOVIE_GENRE" FromRole="MOVIE" ToRole="GENRE" />
           <Property Name="movie_title_link" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="RENTAL">
-          <Key>
-            <PropertyRef Name="movie_number" />
-            <PropertyRef Name="member_number" />
-            <PropertyRef Name="media_checkout" />
-          </Key>
-          <Property Name="movie_number" Type="Int32" Nullable="false" />
-          <Property Name="member_number" Type="Int32" Nullable="false" />
-          <Property Name="media_checkout" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="media_return_date" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="SUBSCRIPTION">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-        </EntityType>
-        <EntityType Name="VENDOR">
-          <Key>
-            <PropertyRef Name="vendor_name" />
-          </Key>
-          <Property Name="vendor_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="vendor_rep" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
-          <Property Name="vendor_rep_email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="vendor_rep_phone" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
-        </EntityType>
         <Association Name="FK_MOVIE_GENRE">
           <End Type="MovieDB.GENRE" Role="GENRE" Multiplicity="1" />
           <End Type="MovieDB.MOVIE" Role="MOVIE" Multiplicity="*" />
@@ -195,14 +117,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="MovieDBStoreContainer" CdmEntityContainer="MovieDatabase">
-          <EntitySetMapping Name="CONTACT_METHODs">
-            <EntityTypeMapping TypeName="MovieDB.CONTACT_METHOD">
-              <MappingFragment StoreEntitySet="CONTACT METHOD">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="GENREs">
             <EntityTypeMapping TypeName="MovieDB.GENRE">
               <MappingFragment StoreEntitySet="GENRE">
@@ -235,36 +149,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="RENTALs">
-            <EntityTypeMapping TypeName="MovieDB.RENTAL">
-              <MappingFragment StoreEntitySet="RENTAL">
-                <ScalarProperty Name="media_return_date" ColumnName="media_return_date" />
-                <ScalarProperty Name="media_checkout" ColumnName="media_checkout" />
-                <ScalarProperty Name="member_number" ColumnName="member_number" />
-                <ScalarProperty Name="movie_number" ColumnName="movie_number" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SUBSCRIPTIONs">
-            <EntityTypeMapping TypeName="MovieDB.SUBSCRIPTION">
-              <MappingFragment StoreEntitySet="SUBSCRIPTION">
-                <ScalarProperty Name="cost" ColumnName="cost" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="VENDORs">
-            <EntityTypeMapping TypeName="MovieDB.VENDOR">
-              <MappingFragment StoreEntitySet="VENDOR">
-                <ScalarProperty Name="vendor_rep_phone" ColumnName="vendor_rep_phone" />
-                <ScalarProperty Name="vendor_rep_email" ColumnName="vendor_rep_email" />
-                <ScalarProperty Name="vendor_rep" ColumnName="vendor_rep" />
-                <ScalarProperty Name="vendor_name" ColumnName="vendor_name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
